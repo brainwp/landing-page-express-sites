@@ -36,10 +36,18 @@
         :root {
             --brasa-green: #00566b;
             --brasa-green-hover: #484848;
+            --brasa-green-flat: #14bac3;
         }
         @font-face {
             font-family: 'Ostrich Sans';
             src: url('/assets/OstrichSans-Bold.ttf');
+        }
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('/assets/OpenSans-Regular.ttf');
+        }
+        * {
+            box-sizing: border-box;
         }
         html {
             margin: 0;
@@ -49,9 +57,14 @@
         body {
             background-color: #f0f0f0;
         	color: var( --brasa-green );
+            font-family: 'Open Sans';
         	font-size: 16px;
         	margin: 0;
             padding-top: 140px;
+        }
+        h2 {
+            color: var( --brasa-green );
+            font-family: 'Ostrich Sans';
         }
         .container {
             margin: 0 auto;
@@ -88,10 +101,98 @@
         nav.primary-menu ul li a:hover {
             color: var( --brasa-green-hover );
         }
+        #what-is {
+            background-color: var( --brasa-green-flat );
+            display: block;
+            overflow: hidden;
+            padding: 50px 30px;
+        }
         #what-is .container div {
             float: right;
             width: 50%;
         }
+        #how-id-work {
+            display: block;
+            overflow: hidden;
+            padding: 50px 30px;
+        }
+        #how-it-work .container div {
+            float: left;
+            width: 50%;
+        }
+        #i-want-a-website {
+            background-color: var( --brasa-green-flat );
+            float: left;
+            padding: 50px 30px;
+            width: 100%;
+        }
+        #i-want-a-website .container > div {
+            float: left;
+            width: 50%;
+        }
+        #frequently-asked-questions {
+            float: left;
+            padding: 50px 30px;
+            width: 100%;
+        }
+        #frequently-asked-questions h2 {
+            text-align: center;
+        }
+        footer.footer-main {
+            background-image: url( './assets/bg-footer.jpg' );
+            color: #ffffff;
+            float: left;
+            padding: 50px 30px;
+            width: 100%;
+        }
+        footer.footer-main nav {
+            margin-left: -30px;
+        }
+        footer.footer-main nav ul {
+            float: left;
+            font-size: 1.4rem;
+            list-style: none;
+            margin-left: 50px;
+            padding-left: 0;
+        }
+        footer.footer-main nav ul li {
+            display: inline-block;
+        }
+        footer.footer-main nav ul li a {
+            color: #ffffff;
+            font-family: Ostrich Sans;
+            padding: 15px 30px;
+            text-decoration: none;
+        }
+        footer.footer-main .credits {
+            float: right;
+            text-align: right;
+            width: 50%;
+        }
+        footer.footer-main .credits a {
+            margin: auto 10px;
+        }
+        footer.footer-main .credits .brasa {
+            background-image: url( ./assets/sprite.png );
+            background-position: top left;
+            display: inline-block;
+            height: 60px;
+            margin-bottom: -10px;
+            overflow: hidden;
+            text-indent: -99999px;
+            width: 110px;
+        }
+        footer.footer-main .credits .wordpress {
+            background-image: url( ./assets/sprite.png );
+            background-position: 0 71px;
+            display: inline-block;
+            height: 51px;
+            margin-bottom: -10px;
+            overflow: hidden;
+            text-indent: 99999px;
+            width: 51px;
+        }
+
         </style>
 
     </head>
@@ -120,7 +221,103 @@
                     </p>
                 </div>
             </div><!-- /.container -->
-        </section><!-- /.what-is -->
+        </section><!-- /#what-is -->
+
+        <section id="how-it-works">
+            <div class="container">
+                <div>
+                    <h2>Como funciona!</h2>
+                    <div class="each">
+                        <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
+                        <span>1</span>
+                    </div>
+                    <div class="each">
+                        <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
+                        <span>2</span>
+                    </div>
+                    <div class="each">
+                        <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
+                        <span>3</span>
+                    </div>
+                    <div class="each">
+                        <p class="destach">Só isso</p>
+                        <span>!</span>
+                    </div>
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /#how-it-works -->
+
+        <section id="i-want-a-website">
+            <div class="container">
+                <div>
+
+                    <form action="">
+                        <input type="text" name="name" placeholder="SEU NOME">
+                        <input type="text" name="mail" placeholder="SEU E-MAIL">
+                        <input type="text" name="facebook" placeholder="SEU FACEBOOK">
+                        <input type="text" name="instagram" placeholder="SEU INSTAGRAM">
+                        <input type="file" name="logo" accept="image/png, image/jpeg">
+                        <textarea name="infos" placeholder="OUTRAS INFORMAÇÕES"></textarea>
+                        <input type="submit">
+                    </form>
+
+                </div>
+                <div>
+                    <h2>Quero um site!</h2>
+                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non, feugiat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit gravida. Sed quis tempus lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /#i-want-a-website -->
+
+        <section id="frequently-asked-questions">
+            <div class="container">
+                <h2>Dúvidas Frequentes</h2>
+                <ul>
+                    <li>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+</span>
+                    </li>
+                    <li>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+</span>
+                    </li>
+                    <li>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+</span>
+                    </li>
+                    <li>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+</span>
+                    </li>
+                    <li>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+</span>
+                    </li>
+                </ul>
+            </div><!-- container -->
+        </section><!-- /#frequently-asked-questions -->
+
+        <footer class="footer-main">
+            <div class="container">
+
+                <nav>
+                    <ul>
+                        <li><a href="https://brasa.art.br">Quem Somos</a></li>
+                        <li><a href="https://brasa.art.br/contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div class="credits">
+                    <span>Desenvolvido por </span><a class="brasa" href="https://brasa.art.br/"></a><span> com </span><a class="wordpress" href="https://brasa.art.br/category/dicas-e-truques-wordpress/">WordPress</a>
+                </div><!-- /.credits -->
+
+            </div><!-- /.container -->
+        </footer><!-- footer-main -->
          
     </body>
 <html>
