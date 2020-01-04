@@ -34,9 +34,11 @@
 
         <style>
         :root {
+            --brasa-white: #ffffff;
             --brasa-green: #00566b;
             --brasa-green-hover: #484848;
             --brasa-green-flat: #14bac3;
+            --brasa-orange: #EC462C;
         }
         @font-face {
             font-family: 'Ostrich Sans';
@@ -59,12 +61,14 @@
         	color: var( --brasa-green );
             font-family: 'Open Sans';
         	font-size: 16px;
+            line-height: 1.6;
         	margin: 0;
-            padding-top: 140px;
         }
         h2 {
             color: var( --brasa-green );
             font-family: 'Ostrich Sans';
+            font-size: 2.5rem;
+            margin: 0 auto 0.5rem;
         }
         .container {
             margin: 0 auto;
@@ -75,10 +79,14 @@
             font-family: Ostrich Sans;
             font-size: 1.6rem;
             height: auto;
-            padding: 30px;
+            padding: 15px;
             position: fixed;
             top: 0;
             width: 100%;
+            z-index: 99;
+            -webkit-box-shadow: 0px 1px 5px 0px rgba(168,168,168,0.3);
+            -moz-box-shadow: 0px 1px 5px 0px rgba(168,168,168,0.3);
+            box-shadow: 0px 1px 5px 0px rgba(168,168,168,0.3);
         }
         nav.primary-menu .logo {
             float: left;
@@ -101,26 +109,160 @@
         nav.primary-menu ul li a:hover {
             color: var( --brasa-green-hover );
         }
+        @media ( max-width: 1080px ) {
+            nav.primary-menu ul {
+                margin-left: 0;
+            }
+            nav.primary-menu ul li a {
+                padding: 15px 0 15px 30px;
+            }
+        }
+        @media ( max-width: 768px ) {
+            nav.primary-menu .logo {
+                margin-top: 20px;
+                max-width: 50px;
+            }
+            nav.primary-menu ul li a {
+                padding: 15px 0 15px 15px;
+            }
+            nav.primary-menu ul li:nth-child(1) a {
+                padding-left: 30px;
+            }
+        }
         #what-is {
+            background: url( 'assets/bg-whats-is.jpg' ) center no-repeat;
+            background-size: cover;
             background-color: var( --brasa-green-flat );
+            color: var( --brasa-white );
             display: block;
+            margin-top: 110px;
+            min-height: 500px;
             overflow: hidden;
             padding: 50px 30px;
         }
-        #what-is .container div {
+        #what-is h2 {
+            color: var( --brasa-white );
+            margin-top: 15px;
+        }
+        #what-is .container .text {
             float: right;
             width: 50%;
         }
-        #how-id-work {
+        #what-is .container .slider {
+            background-color: var( --brasa-green );
+            border-radius: 20px;
+            height: 400px;
+            left: 8%;
+            position: absolute;
+            width: 40%;
+        }
+        #what-is .container .slider .dot {
+            background-color: var( --brasa-green-flat );
+            border-radius: 15px;
+            height: 15px;
+            left: 40px;
+            overflow: hidden;
+            position: absolute;
+            top: 16px;
+            width: 15px;
+        }
+        #what-is .container .slider .dot:nth-child(2) {
+            left: 60px;
+        }
+        #what-is .container .slider .dot:nth-child(3) {
+            left: 80px;
+        }
+        #what-is .container .slider .slider-content {
+            background-color: var( --brasa-white );
+            border: 5px solid #00556B;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            bottom: 0;
+            height: 90%;
+            left: 0;
+            margin: 0 auto;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+        }
+        #what-is p {
+            max-width: 80%;
+        }
+        @media ( max-width: 1080px ) {
+            #what-is .container .text {
+                width: 40%;
+            }
+            #what-is .container .slider {
+                height: 400px;
+                left: 4%;
+                width: 50%;
+            }
+            #what-is p {
+                max-width: 100%;
+            }
+        }
+        @media ( max-width: 768px ) {
+            #what-is .container .slider {
+                height: 400px;
+                left: initial;
+                margin: 0 auto;
+                position: relative;
+                width: 80%;
+            }
+            #what-is .container .text {
+                text-align: center;
+                width: 100%;
+            }
+        }
+         @media ( max-width: 320px ) {
+
+        }
+        #how-it-works    {
             display: block;
             overflow: hidden;
             padding: 50px 30px;
         }
-        #how-it-work .container div {
-            float: left;
+        #how-it-works h2 {
+            text-align: center;
+        }
+        #how-it-works .container {
+            background: url( 'assets/bg-how-it-works.png' ) no-repeat;
+            background-size: 40%;
+            background-position: right 60px;
+        }
+        
+        #how-it-works .container .each {
+            align-items: center;
+            display: flex;
             width: 50%;
         }
+        #how-it-works .container .each p {
+            text-align: right;
+            width: 100%;
+        }
+        #how-it-works .container .each:nth-child(5) p {
+            color: var( --brasa-orange );
+            font-family: 'Ostrich Sans';
+            font-size: 1.5rem;
+        }
+        #how-it-works .container .each span {
+            color: var( --brasa-orange );
+            font-family: 'Ostrich Sans';
+            font-size: 4rem;
+            text-align: center;
+            width: 15%;
+        }
+        @media ( max-width: 768px ) {
+            #how-it-works .container {
+                background: none;
+            }
+            #how-it-works .container .each {
+                width: 100%;
+            }
+        }
         #i-want-a-website {
+            background: url( 'assets/bg-whats-is.jpg' ) center no-repeat;
+            background-size: cover;
             background-color: var( --brasa-green-flat );
             float: left;
             padding: 50px 30px;
@@ -216,8 +358,8 @@
                 <div class="container">
                     <img src="https://brasa.art.br/wp-content/uploads/2019/05/favicon-300x300.png" alt="Logo da Brasa Design" class="logo">
                     <ul>
-                        <li><a href="#">O que é?</a></li>
-                        <li><a href="#">Como funciona!</a></li>
+                        <li><a href="#what-is">O que é?</a></li>
+                        <li><a href="#how-it-works">Como funciona!</a></li>
                         <li><a href="#">Quero um site!</a></li>
                         <li><a href="#">Dúvidas</a></li>
                     </ul>
@@ -227,36 +369,42 @@
 
         <section id="what-is">
             <div class="container">
-                <div>
+                <div class="slider">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="slider-content">
+
+                    </div>
+                </div>
+                <div class="text">
                     <h2>O que é?</h2>
-                    <p>
-                    Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non, feugiat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit gravida. Sed quis tempus lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.
-                    </p>
+                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non, feugiat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In blandit gravida. Sed quis lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
+                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non, feugiat. Maecenas tristique eget eget sollicitudin. In rutrum blandit gravida. Sed quis tempus lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
                 </div>
             </div><!-- /.container -->
         </section><!-- /#what-is -->
 
         <section id="how-it-works">
             <div class="container">
-                <div>
-                    <h2>Como funciona!</h2>
-                    <div class="each">
-                        <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
-                        <span>1</span>
-                    </div>
-                    <div class="each">
-                        <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
-                        <span>2</span>
-                    </div>
-                    <div class="each">
-                        <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
-                        <span>3</span>
-                    </div>
-                    <div class="each">
-                        <p class="destach">Só isso</p>
-                        <span>!</span>
-                    </div>
+                <h2>Como funciona!</h2>
+                <div class="each">
+                    <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
+                    <span>1</span>
                 </div>
+                <div class="each">
+                    <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
+                    <span>2</span>
+                </div>
+                <div class="each">
+                    <p>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum non</p>
+                    <span>3</span>
+                </div>
+                <div class="each">
+                    <p class="destach">Só isso</p>
+                    <span>!</span>
+                </div>
+
             </div><!-- /.container -->
         </section><!-- /#how-it-works -->
 
