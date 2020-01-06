@@ -335,17 +335,70 @@
             width: 50%;
         }
         #i-want-a-website .container form input[type="text"],
-        textarea {
+        #i-want-a-website .container form input[type="file"],
+        #i-want-a-website .container textarea {
+            background-color: var( --brasa-white );
             border: 0;
-            border-radius: 5px;
+            border-radius: 30px;
             display: block;
             margin-bottom: 15px;
             outline: none;
             padding: 15px;
             width: 100%;
         }
+        #i-want-a-website .container textarea {
+            min-height: 250px;
+        }
         #i-want-a-website .container form input[type="text"]:active {
             outline: none;
+        }
+        #i-want-a-website .container form input[type="file"] {
+            cursor: pointer;
+            margin-top: -66px;
+            opacity: 0;
+        }
+        #i-want-a-website .container form label.label-logo {
+            background-color: var( --brasa-white );
+            border: 0;
+            border-radius: 30px;
+            display: block;
+            margin-bottom: 15px;
+            min-height: 45px;
+            outline: none;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+        }
+        #i-want-a-website .container form label.label-logo span {
+            background-color: var( --brasa-green-flat );
+            border-radius: 30px;
+            padding: 5px 10px;
+            color: white;
+            font-size: 0.8rem;
+            position: absolute;
+            right: 10px;
+            top: 7.5px;
+        }
+        #i-want-a-website .container form label.label-logo span.logo-show-value {
+            background-color: transparent;
+            color: #757575;
+            left: 7px;
+            right: auto;
+        }
+        #i-want-a-website .container form input[type="submit"] {
+            background-color: var( --brasa-orange );
+            border: none;
+            box-shadow: none;
+            color: var( --brasa-white );
+            cursor: pointer;
+            border-radius: 30px;
+            display: inline-block;
+            min-width: 100px;
+            padding: 15px;
+            text-transform: uppercase;
+        }
+        #i-want-a-website .container form input[type="submit"]:hover {
+            opacity: 0.8;
         }
         #frequently-asked-questions {
             float: left;
@@ -415,6 +468,24 @@
         <script>
             
             document.addEventListener("DOMContentLoaded", function() {
+
+                var $input = document.getElementById('logo'),
+                    $fileName = document.getElementById('logo-show-value');
+
+                $input.addEventListener('change', function () {
+                    
+                    var fullPath = this.value;
+                    if ( fullPath ) {
+                        var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+                        var filename = fullPath.substring(startIndex);
+                        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                            filename = filename.substring(1);
+                        }
+                        $fileName.textContent = '/' + filename;
+                    }
+
+                });
+
                 var $hamburguer = document.querySelector(".primary-menu .hamburguer");
                 $hamburguer.addEventListener( "click", function() {
 
@@ -504,7 +575,8 @@
                         <input type="text" name="mail" placeholder="SEU E-MAIL">
                         <input type="text" name="facebook" placeholder="SEU FACEBOOK">
                         <input type="text" name="instagram" placeholder="SEU INSTAGRAM">
-                        <input type="file" name="logo" accept="image/png, image/jpeg">
+                        <label class="label-logo" for="logo"><span>Selecionar um arquivo</span><span id="logo-show-value" class="logo-show-value">LOGOTIPO</span></label>
+                        <input type="file" name="logo" id="logo" accept="image/png, image/jpeg" placeholder="SEU INSTAGRAM">
                         <textarea name="infos" placeholder="OUTRAS INFORMAÇÕES"></textarea>
                         <input type="submit">
                     </form>
