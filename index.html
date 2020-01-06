@@ -109,6 +109,9 @@
         nav.primary-menu ul li a:hover {
             color: var( --brasa-green-hover );
         }
+        nav.primary-menu .hamburguer {
+            display: none;
+        }
         @media ( max-width: 1080px ) {
             nav.primary-menu ul {
                 margin-left: 0;
@@ -127,6 +130,65 @@
             }
             nav.primary-menu ul li:nth-child(1) a {
                 padding-left: 30px;
+            }
+            nav.primary-menu .hamburguer {
+                background-color: var( --brasa-green-flat );
+                border-radius: 50px;
+                display: inline-block;
+                height: 50px;
+                position: absolute;
+                right: 15px;
+                top: 35px;
+                width: 50px;
+            }
+            nav.primary-menu .hamburguer div {
+                background-color: var( --brasa-green );
+                border-radius: 5px;
+                height: 4px;
+                left: 8px;
+                overflow: hidden;
+                position: absolute;
+                top: 15px;
+                width: 34px;
+            }
+            nav.primary-menu .hamburguer div:nth-child(1) {
+                top: 24px;
+            }
+            nav.primary-menu .hamburguer div:nth-child(2) {
+                top: 33px;
+            }
+            nav.primary-menu.active-mobile .hamburguer:first-child {
+                transform: rotate(-45deg);
+            }
+            nav.primary-menu.active-mobile .hamburguer div:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            nav.primary-menu.active-mobile .hamburguer div:nth-child(2) {
+                display: none;
+            }
+            nav.primary-menu ul {
+                background-color: #ffffff;
+                display: none;
+                height: 100%;
+                left: 0;
+                padding: 15px;
+                position: fixed;
+                top: -25px;
+                width: 80%;
+                -webkit-box-shadow: 0px 1px 5px 0px rgba(168,168,168,0.3);
+                -moz-box-shadow: 0px 1px 5px 0px rgba(168,168,168,0.3);
+                box-shadow: 0px 1px 5px 0px rgba(168,168,168,0.3);
+            }
+            nav.primary-menu ul li {
+                display: block;
+                padding: 15px 15px 0 15px;
+            }
+            nav.primary-menu ul li:nth-child(1) a,
+            nav.primary-menu ul li a {
+                padding: 0;
+            }
+            nav.primary-menu.active-mobile ul {
+                display: block;
             }
         }
         #what-is {
@@ -350,11 +412,36 @@
 
         </style>
 
+        <script>
+            
+            document.addEventListener("DOMContentLoaded", function() {
+                var $hamburguer = document.querySelector(".primary-menu .hamburguer");
+                $hamburguer.addEventListener( "click", function() {
+
+                    var $menu = document.querySelector(".primary-menu");
+
+                    if ( $menu.classList.contains("active-mobile") ) {
+                        $menu.classList.remove("active-mobile");
+                    } else {
+                        $menu.classList.add("active-mobile");
+                    }
+
+                });
+               
+            });
+            
+        </script>
+
     </head>
 
     <body>
         <header class="header-main">
             <nav class="primary-menu">
+                <div class="hamburguer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <div class="container">
                     <img src="https://brasa.art.br/wp-content/uploads/2019/05/favicon-300x300.png" alt="Logo da Brasa Design" class="logo">
                     <ul>
