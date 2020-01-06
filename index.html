@@ -149,6 +149,7 @@
                 overflow: hidden;
                 position: absolute;
                 top: 15px;
+                transition: all 0.1s ease-in-out;
                 width: 34px;
             }
             nav.primary-menu .hamburguer div:nth-child(1) {
@@ -157,13 +158,17 @@
             nav.primary-menu .hamburguer div:nth-child(2) {
                 top: 33px;
             }
-            nav.primary-menu.active-mobile .hamburguer:first-child {
-                transform: rotate(-45deg);
-            }
             nav.primary-menu.active-mobile .hamburguer div:nth-child(1) {
+                left: 8px;
+                top: 24px;
                 transform: rotate(45deg);
             }
             nav.primary-menu.active-mobile .hamburguer div:nth-child(2) {
+                left: 8px;
+                top: 24px;
+                transform: rotate(135deg);
+            }
+            nav.primary-menu.active-mobile .hamburguer div:nth-child(3) {
                 display: none;
             }
             nav.primary-menu ul {
@@ -509,9 +514,9 @@
         <header class="header-main">
             <nav class="primary-menu">
                 <div class="hamburguer">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
                 </div>
                 <div class="container">
                     <img src="https://brasa.art.br/wp-content/uploads/2019/05/favicon-300x300.png" alt="Logo da Brasa Design" class="logo">
