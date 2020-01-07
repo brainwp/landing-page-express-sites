@@ -412,6 +412,20 @@
         #frequently-asked-questions h2 {
             text-align: center;
         }
+        #frequently-asked-questions ul li h3 {
+            cursor: pointer;
+        }
+        #frequently-asked-questions ul li span {
+            display: inherit;
+            height: 0;
+            opacity: 0;
+            transition: all 0.1s ease-in-out;
+        }
+        #frequently-asked-questions ul li.open span {
+            display: block;
+            height: auto;
+            opacity: 1;
+        }
         footer.footer-main {
             background-image: url( './assets/bg-footer.jpg' );
             color: #ffffff;
@@ -537,6 +551,22 @@
                     }
 
                 });
+
+                var $toggle = document.querySelectorAll( "#frequently-asked-questions li" );
+                
+                [].forEach.call( $toggle, function( $each ) {
+                    $each.addEventListener( "click", function() {
+                        if ( $each.classList.contains("open") ) {
+                            $each.classList.remove("open");
+                        } else {
+                            var $toggle2 = document.querySelectorAll("#frequently-asked-questions li");
+                            [].forEach.call( $toggle2, function( $each2 ) {
+                                $each2.classList.remove("open");
+                            });
+                            $each.classList.add("open");
+                        }
+                    });
+                });
                
             });
             
@@ -633,28 +663,28 @@
                 <h2>Dúvidas Frequentes</h2>
                 <ul>
                     <li>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
-                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+                        <h3>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>1 Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
 </span>
                     </li>
                     <li>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
-                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+                        <h3>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>2 Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
 </span>
                     </li>
                     <li>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
-                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+                        <h3>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>3 Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
 </span>
                     </li>
                     <li>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
-                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+                        <h3>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>4 Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
 </span>
                     </li>
                     <li>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
-                        <span>Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
+                        <h3>5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat quam varius</h3>
+                        <span>5 Sed sagittis sollicitudin vulate. Vestibulum semper pretiuetra. Nam turpis neque, sagittis at ipsum noniat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit quis tempus lacus, a ultrices est. Maecenas justdsf ffdwus. Proin et felis bcondimentum.
 </span>
                     </li>
                 </ul>
