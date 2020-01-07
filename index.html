@@ -281,8 +281,7 @@
                 width: 100%;
             }
         }
-         @media ( max-width: 320px ) {
-
+        @media ( max-width: 320px ) {
         }
         #how-it-works    {
             display: block;
@@ -466,6 +465,41 @@
             overflow: hidden;
             text-indent: 99999px;
             width: 51px;
+        }
+        @media ( max-width: 1080px ) {
+            footer.footer-main nav {
+                display: none;
+            }
+            footer.footer-main .credits {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+        }
+        @media ( max-width: 450px ) {
+            footer.footer-main {
+                padding: 40px 15px;
+            }
+            footer.footer-main .credits a.brasa {
+                background-size: 100%;
+                height: 47px;
+                margin-bottom: -13px;
+                width: 80px;
+            }
+            footer.footer-main .credits a.wordpress {
+                background-size: 176%;
+                background-position: 0 51px;
+                height: 43px;
+                width: 43px;
+            }
+        }
+        @media ( max-width: 380px ) {
+            footer.footer-main .credits span:nth-child(3) {
+                display: none;
+            }
+            footer.footer-main .credits a:nth-child(4) {
+                display: none;
+            }
         }
 
         </style>
