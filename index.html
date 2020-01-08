@@ -78,7 +78,7 @@
         nav.primary-menu {
             background-color: #fff;
             font-family: 'Odin Rounded Bold';
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             height: auto;
             padding: 15px;
             position: fixed;
@@ -272,6 +272,9 @@
             }
         }
         @media ( max-width: 768px ) {
+            #what-is {
+                margin-top: 100px;
+            }
             #what-is .container .slider {
                 height: 400px;
                 left: initial;
@@ -599,10 +602,19 @@
 
                 });
 
+                var $mobileMenuItems = document.querySelectorAll(".primary-menu.active-mobile ul li a");
+                [].forEach.call($mobileMenuItems, function($mobileMenuEach) {
+                    console.log(1);
+                    $mobileMenuEach.addEventListener("click", ()=>{
+                        var $mobileMenu = document.querySelector(".primary-menu.active-mobile");
+                        $mobileMenu.classList.remove("active-mobile");
+                        console.log(1);
+                    });
+                });
+
                 var $toggle = document.querySelectorAll( "#frequently-asked-questions li" );
-                
                 [].forEach.call( $toggle, function( $each ) {
-                    $each.addEventListener( "click", ()=>{
+                    $each.addEventListener("click", ()=>{
                         if ( $each.classList.contains("open") ) {
                             $each.classList.remove("open");
                         } else {
