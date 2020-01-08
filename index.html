@@ -35,14 +35,15 @@
         <style>
         :root {
             --brasa-white: #ffffff;
+            --brasa-grey: #eeeeee;
             --brasa-green: #00566b;
             --brasa-green-hover: #484848;
             --brasa-green-flat: #14bac3;
             --brasa-orange: #EC462C;
         }
         @font-face {
-            font-family: 'Ostrich Sans';
-            src: url('assets/OstrichSans-Bold.otf');
+            font-family: 'Odin Rounded Bold';
+            src: url('assets/Odin-Rounded-Bold.otf');
         }
         @font-face {
             font-family: 'Open Sans';
@@ -57,7 +58,6 @@
             scroll-behavior: smooth;
         }
         body {
-            background-color: #f0f0f0;
         	color: var( --brasa-green );
             font-family: 'Open Sans';
         	font-size: 16px;
@@ -66,9 +66,10 @@
         }
         h2 {
             color: var( --brasa-green );
-            font-family: 'Ostrich Sans';
+            font-family: 'Odin Rounded Bold';
             font-size: 2.5rem;
             margin: 0 auto 0.5rem;
+            text-transform: uppercase;
         }
         .container {
             margin: 0 auto;
@@ -76,11 +77,12 @@
         }
         nav.primary-menu {
             background-color: #fff;
-            font-family: Ostrich Sans;
+            font-family: 'Odin Rounded Bold';
             font-size: 1.6rem;
             height: auto;
             padding: 15px;
             position: fixed;
+            text-transform: uppercase;
             top: 0;
             width: 100%;
             z-index: 99;
@@ -107,7 +109,7 @@
             text-decoration: none;
         }
         nav.primary-menu ul li a:hover {
-            color: var( --brasa-green-hover );
+            color: var( --brasa-orange );
         }
         nav.primary-menu .hamburguer {
             display: none;
@@ -134,6 +136,7 @@
             nav.primary-menu .hamburguer {
                 background-color: var( --brasa-green-flat );
                 border-radius: 50px;
+                cursor: pointer;
                 display: inline-block;
                 height: 50px;
                 position: absolute;
@@ -308,12 +311,13 @@
         }
         #how-it-works .container .each:nth-child(5) p {
             color: var( --brasa-orange );
-            font-family: 'Ostrich Sans';
+            font-family: 'Odin Rounded Bold';
             font-size: 1.5rem;
+            text-transform: uppercase;
         }
         #how-it-works .container .each span {
             color: var( --brasa-orange );
-            font-family: 'Ostrich Sans';
+            font-family: 'Odin Rounded Bold';
             font-size: 4rem;
             text-align: center;
             width: 15%;
@@ -334,9 +338,21 @@
             padding: 50px 30px;
             width: 100%;
         }
-        #i-want-a-website .container > div {
-            float: left;
+        #i-want-a-website .container .right {
+            float: right;
             width: 50%;
+        }
+        #i-want-a-website .container .text {
+            color: var( --brasa-white );
+            float: right;
+            padding-left: 3%;
+            width: 50%;
+        }
+        #i-want-a-website .container .text h2 {
+            color: var( --brasa-white );
+        }
+        #i-want-a-website .container p {
+            max-width: 80%;
         }
         #i-want-a-website .container form input[type="text"],
         #i-want-a-website .container form input[type="file"],
@@ -351,6 +367,7 @@
             width: 100%;
         }
         #i-want-a-website .container textarea {
+            font-family: Arial, Helvetica, sans-serif;
             min-height: 250px;
         }
         #i-want-a-website .container form input[type="text"]:active {
@@ -397,12 +414,28 @@
             cursor: pointer;
             border-radius: 30px;
             display: inline-block;
+            font-family: 'Odin Rounded Bold';
             min-width: 100px;
             padding: 15px;
             text-transform: uppercase;
         }
         #i-want-a-website .container form input[type="submit"]:hover {
             opacity: 0.8;
+        }
+        @media ( max-width: 768px ) {
+            #i-want-a-website .container .text,
+            #i-want-a-website .container .right {
+                float: none;
+                width: 100%;
+            }
+            #i-want-a-website .container .text {
+                margin-bottom: 50px;
+                padding-left: 0;
+                text-align: center;
+            }
+            #i-want-a-website .container .text p {
+                max-width: 100%;
+            }
         }
         #frequently-asked-questions {
             float: left;
@@ -412,8 +445,20 @@
         #frequently-asked-questions h2 {
             text-align: center;
         }
-        #frequently-asked-questions ul li h3 {
+        #frequently-asked-questions ul {
+            padding-left: 0;
+        }
+        #frequently-asked-questions ul li {
+            background-color: var( --brasa-grey );
+            border-radius: 20px;
             cursor: pointer;
+            list-style: none;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+        }
+        #frequently-asked-questions ul li h3 {
+            margin: 0;
+            
         }
         #frequently-asked-questions ul li span {
             display: inherit;
@@ -425,6 +470,7 @@
             display: block;
             height: auto;
             opacity: 1;
+            padding: 15px 0 0 0;
         }
         footer.footer-main {
             background-image: url( './assets/bg-footer.jpg' );
@@ -448,9 +494,10 @@
         }
         footer.footer-main nav ul li a {
             color: #ffffff;
-            font-family: Ostrich Sans;
+            font-family: 'Odin Rounded Bold';
             padding: 15px 30px;
             text-decoration: none;
+            text-transform: uppercase;
         }
         footer.footer-main .credits {
             float: right;
@@ -555,7 +602,7 @@
                 var $toggle = document.querySelectorAll( "#frequently-asked-questions li" );
                 
                 [].forEach.call( $toggle, function( $each ) {
-                    $each.addEventListener( "click", function() {
+                    $each.addEventListener( "click", ()=>{
                         if ( $each.classList.contains("open") ) {
                             $each.classList.remove("open");
                         } else {
@@ -566,6 +613,21 @@
                             $each.classList.add("open");
                         }
                     });
+                });
+
+                $menu = document.querySelectorAll(".primary-menu li a");
+                [].forEach.call( $menu, function( $eachMenu ) {
+                    
+                    $eachMenu.addEventListener("click", ()=>{
+                        event.preventDefault();
+                        var $scrollToId = $eachMenu.getAttribute("href").replace("#", "");
+                        var $scrollTo = document.getElementById($scrollToId);
+                        if ( $scrollTo ) {
+                            const $scrollToOffSet = $scrollTo.offsetTop;
+                            window.scrollTo(0, $scrollToOffSet - 100);
+                        }
+                    });
+
                 });
                
             });
@@ -587,8 +649,8 @@
                     <ul>
                         <li><a href="#what-is">O que é?</a></li>
                         <li><a href="#how-it-works">Como funciona!</a></li>
-                        <li><a href="#">Quero um site!</a></li>
-                        <li><a href="#">Dúvidas</a></li>
+                        <li><a href="#how-it-works">Quero um site!</a></li>
+                        <li><a href="#frequently-asked-questions">Dúvidas</a></li>
                     </ul>
                 </div><!-- /.container -->
             </nav>
@@ -637,8 +699,19 @@
 
         <section id="i-want-a-website">
             <div class="container">
-                <div>
-
+                <div class="text">
+                    <h2>Quero um site!</h2>
+                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non,
+                        feugiat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit gravida. Sed quis
+                        tempus lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
+                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non,
+                        feugiat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit gravida. Sed quis
+                        tempus
+                        lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
+                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non,
+                        f quis tempus lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
+                </div>
+                <div class="right">
                     <form action="">
                         <input type="text" name="name" placeholder="SEU NOME">
                         <input type="text" name="mail" placeholder="SEU E-MAIL">
@@ -649,11 +722,6 @@
                         <textarea name="infos" placeholder="OUTRAS INFORMAÇÕES"></textarea>
                         <input type="submit">
                     </form>
-
-                </div>
-                <div>
-                    <h2>Quero um site!</h2>
-                    <p>Sed sagittis sollicitudin vulputate. Vestibulum semper pretium pharetra. Nam turpis neque, sagittis at ipsum non, feugiat eleifend ipsum. Maecenas tristique eget magna eget sollicitudin. In rutrum blandit gravida. Sed quis tempus lacus, a ultrices est. Maecenas justo enim, mattis at varius condimentum.</p>
                 </div>
             </div><!-- /.container -->
         </section><!-- /#i-want-a-website -->
