@@ -604,11 +604,9 @@
 
                 var $mobileMenuItems = document.querySelectorAll(".primary-menu.active-mobile ul li a");
                 [].forEach.call($mobileMenuItems, function($mobileMenuEach) {
-                    console.log(1);
                     $mobileMenuEach.addEventListener("click", ()=>{
                         var $mobileMenu = document.querySelector(".primary-menu.active-mobile");
                         $mobileMenu.classList.remove("active-mobile");
-                        console.log(1);
                     });
                 });
 
@@ -782,7 +780,7 @@
                 </nav>
 
                 <div class="credits">
-                    <span>Desenvolvido por </span><a class="brasa" href="https://brasa.art.br/"></a><span> com </span><a class="wordpress" href="https://brasa.art.br/category/dicas-e-truques-wordpress/">WordPress</a>
+                    <span>Desenvolvido pela </span><a class="brasa" href="https://brasa.art.br/"></a><span> com </span><a class="wordpress" href="https://brasa.art.br/category/dicas-e-truques-wordpress/">WordPress</a>
                 </div><!-- /.credits -->
 
             </div><!-- /.container -->
